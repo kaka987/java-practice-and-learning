@@ -1,24 +1,24 @@
 # java-practice-and-learning
 
-                                                       /*
-目录
+
+# 目录
 ------------------------------
-1、环境配置（win/Linux)
-2、Hello World
-3、基础语法
-    1）数据类型
-    2）运算符和循环结构
-    3）数组
-    4）字符串
-    5）类和对象
-    6）异常处理
-4、数据结构和常见算法
-5、
+1. 环境配置（win/Linux)
+2. Hello World
+3. 基础语法
+    1. 数据类型
+    2. 运算符和循环结构
+    3. 数组
+    4. 字符串
+    5. 类和对象
+    6. 异常处理
+4. 数据结构和常见算法
 
 高级java招聘要求
 
 http://edu.csdn.net/course/detail/1060《javaweb 基础核心技术
 http://edu.csdn.net/course/detail/852 《spring 4》
+
 
 // 单行注释
 /*
@@ -78,39 +78,39 @@ Filename: HelloWorld.java
 */
 
 // 每个 .java 文件都包含一个public类，这个类的名字必须和这个文件名一致。
-public class HelloWorld {
+		public class HelloWorld {
 
-    // 每个程序都需要有一个main函数作为入口 同c的main
-    public static void main(String args[]) {
-        System.out.println("Hello World!");
+		    // 每个程序都需要有一个main函数作为入口 同c的main
+		    public static void main(String args[]) {
+			System.out.println("Hello World!");
 
-        // 如果要在输出后不自动换行，可以使用System.out.print方法。
-        System.out.print("Hello ");
-        System.out.print("World");
-    }
-}
+			// 如果要在输出后不自动换行，可以使用System.out.print方法。
+			System.out.print("Hello ");
+			System.out.print("World");
+		    }
+		}
 
-/* javac HelloWorld.java */
-/* java HelloWorld */
+		/* javac HelloWorld.java */
+		/* java HelloWorld */
 
 
-public class Person {
-	
-	String name;
-	int age;
-	
-	public String toString() {
-		return name+","+age+"岁";
-	}
+		public class Person {
 
-	public static void main(String args[]) {
-		Person p1 = new Person();
-		System.out.println(p1.toString());
-		p1.name = "xiaoming";
-		p1.age = 20;
-		System.out.println(p1.toString());
-	}
-}
+			String name;
+			int age;
+
+			public String toString() {
+				return name+","+age+"岁";
+			}
+
+			public static void main(String args[]) {
+				Person p1 = new Person();
+				System.out.println(p1.toString());
+				p1.name = "xiaoming";
+				p1.age = 20;
+				System.out.println(p1.toString());
+			}
+		}
 
 
 
@@ -230,54 +230,54 @@ public class Person {
 // 4) : 变量类型有：局部变量、成员变量、类变量
 // 局部变量被声明后，必须经过初始化，才可以使用。
 // 局部变量是在栈上分配的。
-package com.young.test;
+	package com.young.test;
 
-public class  Test{
+	public class  Test{
 
-    public int pupAge() {
-        int age = 0;
-        age += 7;
-        return age;
-    }
+	    public int pupAge() {
+		int age = 0;
+		age += 7;
+		return age;
+	    }
 
-    public static void main(String[] args) {
-        Test test = new Test();
-        System.out.println("Age: " + test.pupAge());
-    }
-}
+	    public static void main(String[] args) {
+		Test test = new Test();
+		System.out.println("Age: " + test.pupAge());
+	    }
+	}
 
 // 实例变量（属性）声明在一个类中，但在方法、构造方法和语句块之外
 // 实例变量在对象创建的时候创建，在对象被销毁的时候销毁；
 // 一般情况下应该把实例变量设为私有。通过使用访问修饰符可以使实例变量对子类可见；
 // 实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。
 
-import java.io.*;
+	import java.io.*;
 
-public class Employee {
+	public class Employee {
 
-    public String name;
+	    public String name;
 
-    private double salary;
+	    private double salary;
 
-    public Employee (String empName) {
-        name = empName;
-    }
+	    public Employee (String empName) {
+		name = empName;
+	    }
 
-    public void setSalary(double empSal) {
-        salary = empSal;
-    }
+	    public void setSalary(double empSal) {
+		salary = empSal;
+	    }
 
-    public void printEmp() {
-        System.out.println("name  : " + name );
-        System.out.println("salary :" + salary);
-    }
+	    public void printEmp() {
+		System.out.println("name  : " + name );
+		System.out.println("salary :" + salary);
+	    }
 
-    public static void main(String[] args) {
-        Employee e = new Employee("kaka");
-        e.setSalary(100.5);
-        e.printEmp();
-    }
-}
+	    public static void main(String[] args) {
+		Employee e = new Employee("kaka");
+		e.setSalary(100.5);
+		e.printEmp();
+	    }
+	}
 
 // 类变量（静态变量）
 // 类变量也称为静态变量，在类中以static关键字声明，但必须在方法构造方法和语句块之外。
@@ -287,17 +287,17 @@ public class Employee {
 // 类变量被声明为public static final类型时，类变量名称必须使用大写字母。如果静态变量不是public和final类型，其命名方式与实例变量以及局部变量的命名方式一致。
 // 注意：如果其他类想要访问该变量，可以这样访问：Employee.DEPARTMENT。
 
-import java.io.*;
-public class Employee {
-    //salary是静态的私有变量
-    private static double salary;
-    // DEPARTMENT是一个常量
-    public static final String DEPARTMENT = "开发人员";
-    public static void main(String args[]){
-    salary = 10000;
-        System.out.println(DEPARTMENT+"平均工资:"+salary);
-    }
-}
+	import java.io.*;
+	public class Employee {
+	    //salary是静态的私有变量
+	    private static double salary;
+	    // DEPARTMENT是一个常量
+	    public static final String DEPARTMENT = "开发人员";
+	    public static void main(String args[]){
+	    salary = 10000;
+		System.out.println(DEPARTMENT+"平均工资:"+salary);
+	    }
+	}
 
 
 
@@ -420,110 +420,110 @@ public class Employee {
 // Java 日期时间
 
 1 时间戳转换成时间：
-import java.text.SimpleDateFormat;
-import java.util.Date;
+	import java.text.SimpleDateFormat;
+	import java.util.Date;
 
-public class TimeToDate {
-    public static void main(String[] args){
-        Long timeStamp = System.currentTimeMillis();  //获取当前时间戳
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        //String sd = sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp))));   // 时间戳转换成时间
-        String sd = sdf.format(new Date(timeStamp));
-        System.out.println(sd);
-   }
-}
+	public class TimeToDate {
+	    public static void main(String[] args){
+		Long timeStamp = System.currentTimeMillis();  //获取当前时间戳
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		//String sd = sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp))));   // 时间戳转换成时间
+		String sd = sdf.format(new Date(timeStamp));
+		System.out.println(sd);
+	   }
+	}
 
 2 格式化时间
-import java.text.SimpleDateFormat;
-import java.util.Date;
+	import java.text.SimpleDateFormat;
+	import java.util.Date;
 
-public class Main{
-   public static void main(String[] args){
-      Date date = new Date();
-      String strDateFormat = "yyyy-MM-dd HH:mm:ss";
-      SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
-      System.out.println(sdf.format(date));
-   }
-}
+	public class Main{
+	   public static void main(String[] args){
+	      Date date = new Date();
+	      String strDateFormat = "yyyy-MM-dd HH:mm:ss";
+	      SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
+	      System.out.println(sdf.format(date));
+	   }
+	}
 
 3 获取当前日期
-import java.util.Calendar;
+	import java.util.Calendar;
 
-public class Main {
-    public static void main(String[] args) {
-        Calendar cal = Calendar.getInstance();
-        int day = cal.get(Calendar.DATE);
-        int month = cal.get(Calendar.MONTH) + 1;
-        int year = cal.get(Calendar.YEAR);
-        int dow = cal.get(Calendar.DAY_OF_WEEK);
-        int dom = cal.get(Calendar.DAY_OF_MONTH);
-        int doy = cal.get(Calendar.DAY_OF_YEAR);
+	public class Main {
+	    public static void main(String[] args) {
+		Calendar cal = Calendar.getInstance();
+		int day = cal.get(Calendar.DATE);
+		int month = cal.get(Calendar.MONTH) + 1;
+		int year = cal.get(Calendar.YEAR);
+		int dow = cal.get(Calendar.DAY_OF_WEEK);
+		int dom = cal.get(Calendar.DAY_OF_MONTH);
+		int doy = cal.get(Calendar.DAY_OF_YEAR);
 
-        System.out.println("当期时间: " + cal.getTime());
-        System.out.println("日期: " + day);
-        System.out.println("月份: " + month);
-        System.out.println("年份: " + year);
-        System.out.println("一周的第几天: " + dow);  // 星期日为一周的第一天输出为 1，星期一输出为 2，以此类推
-        System.out.println("一月中的第几天: " + dom);
-        System.out.println("一年的第几天: " + doy);
-    }
-}
+		System.out.println("当期时间: " + cal.getTime());
+		System.out.println("日期: " + day);
+		System.out.println("月份: " + month);
+		System.out.println("年份: " + year);
+		System.out.println("一周的第几天: " + dow);  // 星期日为一周的第一天输出为 1，星期一输出为 2，以此类推
+		System.out.println("一月中的第几天: " + dom);
+		System.out.println("一年的第几天: " + doy);
+	    }
+	}
 
 
 1) timeStamp to  dateString
 
-long t = System.currentTimeMillis();
-SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-String dateString = format.format(t);
-System.out.println(dateString);
+	long t = System.currentTimeMillis();
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	String dateString = format.format(t);
+	System.out.println(dateString);
 
 2) dateString to timeStamp/date
 
-Date d = new Date();
-try {
-    d = new SimpleDateFormat("yyyy-MM-dd").parse("2017-02-15");
-} catch (ParseExeption e) {
-    e.printStackTrace();
-}
-System.out.println(d);
-System.out.println(d.getTime());
+	Date d = new Date();
+	try {
+	    d = new SimpleDateFormat("yyyy-MM-dd").parse("2017-02-15");
+	} catch (ParseExeption e) {
+	    e.printStackTrace();
+	}
+	System.out.println(d);
+	System.out.println(d.getTime());
 
 
 3) get the first and last date of month
 
-String tt = "2017-02";
-Date month = new date();
-try {
-    month = new SimpleDateFormat("yyyy-MM").parse("2017-02");
-} catch (ParseExeption e) {
-    e.printStackTrace();
-}
-Calendar c = Calendar.getInstance();
-c.setTime(month);
-c.set(Calendar.DAY_OF_MONTH, 1);
-System.out.println(c.getTime());
+	String tt = "2017-02";
+	Date month = new date();
+	try {
+	    month = new SimpleDateFormat("yyyy-MM").parse("2017-02");
+	} catch (ParseExeption e) {
+	    e.printStackTrace();
+	}
+	Calendar c = Calendar.getInstance();
+	c.setTime(month);
+	c.set(Calendar.DAY_OF_MONTH, 1);
+	System.out.println(c.getTime());
 
-c.set(Calendar.MONTH, c.get(Calendar.MONTH) + 1);
-c.set(Calendar.DAY_OF_MONTH, -1);
-System.out.println(c.getTime());
+	c.set(Calendar.MONTH, c.get(Calendar.MONTH) + 1);
+	c.set(Calendar.DAY_OF_MONTH, -1);
+	System.out.println(c.getTime());
 
 
 4) get the date before of current
 
-int dayNum = 10;
-Calendar c1 = Calendar.getInstance();
-c1.set(Calendar.DAY_OF_MONTH, c1.get(Calendar.DAY_OF_MONTH) - dayNum);
-System.out.println(c1.getTime());
+	int dayNum = 10;
+	Calendar c1 = Calendar.getInstance();
+	c1.set(Calendar.DAY_OF_MONTH, c1.get(Calendar.DAY_OF_MONTH) - dayNum);
+	System.out.println(c1.getTime());
 
 
 5) 比较日期
 
-String s1 = "2017-02-01";
-String s2 = "2017-01-31";
-Date d1 = new SimpleDateFormat("yyyy-MM-dd").parse(s1);
-Date d2 = new SimpleDateFormat("yyyy-MM-dd").parse(s2);
-System.out.println(d1.before(d2)+" or "+d1.after(d2));
-System.out.println(d1.compareTo(d2)>0+" or "+d1.compareTo(d2)>0);
+	String s1 = "2017-02-01";
+	String s2 = "2017-01-31";
+	Date d1 = new SimpleDateFormat("yyyy-MM-dd").parse(s1);
+	Date d2 = new SimpleDateFormat("yyyy-MM-dd").parse(s2);
+	System.out.println(d1.before(d2)+" or "+d1.after(d2));
+	System.out.println(d1.compareTo(d2)>0+" or "+d1.compareTo(d2)>0);
 
 
 
@@ -546,20 +546,20 @@ System.out.println(d1.compareTo(d2)>0+" or "+d1.compareTo(d2)>0);
 ///////////////////////////////////////
 
 // 1 字符串长度
-String site = "www.runoob.com";
-int len = site.length();
+	String site = "www.runoob.com";
+	int len = site.length();
 
 // 2 连接字符串
-"My name is ".concat("Runoob");
-"Hello," + " world" + "!";
+	"My name is ".concat("Runoob");
+	"Hello," + " world" + "!";
 
 // 3 格式化字符串
-String fs;
-fs = String.format("浮点型变量的的值为 " +
-                   "%f, 整型变量的值为 " +
-                   " %d, 字符串变量的值为 " +
-                   " %s", floatVar, intVar, stringVar);
-System.out.println(fs);
+	String fs;
+	fs = String.format("浮点型变量的的值为 " +
+			   "%f, 整型变量的值为 " +
+			   " %d, 字符串变量的值为 " +
+			   " %s", floatVar, intVar, stringVar);
+	System.out.println(fs);
 
 // 4 获取该字符在字符串中位置
 int indexOf（int ch） 返回的是ch在字符串中的第一次出现的位置。
@@ -621,14 +621,14 @@ String toUpperCase()
 ///////////////////////////////////////
 
 数组作为函数的返回值:
-public static int[] reverse(int[] list) {
-  int[] result = new int[list.length];
+	public static int[] reverse(int[] list) {
+	  int[] result = new int[list.length];
 
-  for (int i = 0, j = result.length - 1; i < list.length; i++, j--) {
-    result[j] = list[i];
-  }
-  return result;
-}
+	  for (int i = 0, j = result.length - 1; i < list.length; i++, j--) {
+	    result[j] = list[i];
+	  }
+	  return result;
+	}
 
 
 遍历数组：
@@ -650,39 +650,39 @@ for (double element: myList) {
 }
 
 常见数组操作：
-import java.util.Arrays;  
-  
-/* 
- * Arrays工具类的中的几个常用方法 
- * 1.copyof 
- * 2.toString 
- * 3.equals 
- * 4.sort 
- * 5.fill 
- * 6.binarySearch 
- */  
-public class ArraysTest {  
-  
-    public static void main(String[] args) {  
-        String [] arry1={"北京","上海","重庆","深圳"};  
-        String [] arry2=Arrays.copyOf(arry1, 4);  
-        //复制copyof  
-        System.out.println("arry2是:"+Arrays.toString(arry2));  
-        //比较 equals  
-        System.out.println("arry1与arry2是否相等:"+Arrays.equals(arry1, arry2));  
-        //将arry1排序 sort  
-        Arrays.sort(arry1);  
-        //toString  
-        System.out.println("排序后的arry1的值:"+Arrays.toString(arry1));  
-        //排序后arry1与arry2是否还相等 equals  
-        System.out.println("排序后arry1与arry2是否还相等"+Arrays.equals(arry1, arry2));  
-        //填充 fill  
-        Arrays.fill(arry2, "广州");  
-        System.out.println("填充之后arry2的值:"+Arrays.toString(arry2));  
-        //查询binarySearch前提是数组已经排序过后才可以使用  
-        System.out.println("重庆在arry1中的位置:"+Arrays.binarySearch(arry1, "重庆"));  
-    }  
-} 
+	import java.util.Arrays;  
+
+	/* 
+	 * Arrays工具类的中的几个常用方法 
+	 * 1.copyof 
+	 * 2.toString 
+	 * 3.equals 
+	 * 4.sort 
+	 * 5.fill 
+	 * 6.binarySearch 
+	 */  
+	public class ArraysTest {  
+
+	    public static void main(String[] args) {  
+		String [] arry1={"北京","上海","重庆","深圳"};  
+		String [] arry2=Arrays.copyOf(arry1, 4);  
+		//复制copyof  
+		System.out.println("arry2是:"+Arrays.toString(arry2));  
+		//比较 equals  
+		System.out.println("arry1与arry2是否相等:"+Arrays.equals(arry1, arry2));  
+		//将arry1排序 sort  
+		Arrays.sort(arry1);  
+		//toString  
+		System.out.println("排序后的arry1的值:"+Arrays.toString(arry1));  
+		//排序后arry1与arry2是否还相等 equals  
+		System.out.println("排序后arry1与arry2是否还相等"+Arrays.equals(arry1, arry2));  
+		//填充 fill  
+		Arrays.fill(arry2, "广州");  
+		System.out.println("填充之后arry2的值:"+Arrays.toString(arry2));  
+		//查询binarySearch前提是数组已经排序过后才可以使用  
+		System.out.println("重庆在arry1中的位置:"+Arrays.binarySearch(arry1, "重庆"));  
+	    }  
+	} 
 
 
 ///////////////////////////////////////
@@ -753,316 +753,316 @@ Dictionary
 Hashtable
 
 // LinkedList
-import java.util.LinkedList;
+	import java.util.LinkedList;
 
-public class Main {
-    public static void main(String[] args) {
-        LinkedList lList = new LinkedList();
-        //可以使用泛型限制集合里元素的类型
-        //LinkedList<String> lList = new LinkedList<String>();
-        lList.add("1");
-        lList.add("2");
-        lList.add("3");
-        lList.add("4");
-        lList.add("5");
-        System.out.println(lList);
-        lList.addFirst("0");
-        System.out.println(lList);
-        lList.addLast("6");
-        System.out.println(lList);
-        System.out.println("链表的第一个元素是：" + lList.getFirst());
-        System.out.println("链表的第二个元素是：" + lList.getLast());
-    }
-}
+	public class Main {
+	    public static void main(String[] args) {
+		LinkedList lList = new LinkedList();
+		//可以使用泛型限制集合里元素的类型
+		//LinkedList<String> lList = new LinkedList<String>();
+		lList.add("1");
+		lList.add("2");
+		lList.add("3");
+		lList.add("4");
+		lList.add("5");
+		System.out.println(lList);
+		lList.addFirst("0");
+		System.out.println(lList);
+		lList.addLast("6");
+		System.out.println(lList);
+		System.out.println("链表的第一个元素是：" + lList.getFirst());
+		System.out.println("链表的第二个元素是：" + lList.getLast());
+	    }
+	}
 
 // List 和 Set 遍历
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+	import java.util.ArrayList;
+	import java.util.HashSet;
+	import java.util.Iterator;
+	import java.util.List;
+	import java.util.Set;
 
-public class Main {
+	public class Main {
 
-   public static void main(String[] args) {
-      // List集合的遍历
-      listTest();
-      // Set集合的遍历
-      setTest();
-   }
+	   public static void main(String[] args) {
+	      // List集合的遍历
+	      listTest();
+	      // Set集合的遍历
+	      setTest();
+	   }
 
-   private static void setTest() {
-      Set<String> set = new HashSet<String>();
-      set.add("JAVA");
-      set.add("C");
-      set.add("C++");
-      // 重复数据添加失败
-      set.add("JAVA");
-      set.add("JAVASCRIPT");
+	   private static void setTest() {
+	      Set<String> set = new HashSet<String>();
+	      set.add("JAVA");
+	      set.add("C");
+	      set.add("C++");
+	      // 重复数据添加失败
+	      set.add("JAVA");
+	      set.add("JAVASCRIPT");
 
-      // 使用iterator遍历set集合
-      Iterator<String> it = set.iterator();
-      while (it.hasNext()) {
-         String value = it.next();
-         System.out.println(value);
-      }
-      
-      // 使用增强for循环遍历set集合
-      for(String s: set){
-         System.out.println(s);
-      }
-   }
+	      // 使用iterator遍历set集合
+	      Iterator<String> it = set.iterator();
+	      while (it.hasNext()) {
+		 String value = it.next();
+		 System.out.println(value);
+	      }
 
-   // 遍历list集合
-   private static void listTest() {
-      List<String> list = new ArrayList<String>();
-      list.add("菜");
-      list.add("鸟");
-      list.add("教");
-      list.add("程");
-      list.add("www.w3cschool.cc");
+	      // 使用增强for循环遍历set集合
+	      for(String s: set){
+		 System.out.println(s);
+	      }
+	   }
 
-      // 使用iterator遍历
-      Iterator<String> it = list.iterator();
-      while (it.hasNext()) {
-         String value = it.next();
-         System.out.println(value);
-      }
+	   // 遍历list集合
+	   private static void listTest() {
+	      List<String> list = new ArrayList<String>();
+	      list.add("菜");
+	      list.add("鸟");
+	      list.add("教");
+	      list.add("程");
+	      list.add("www.w3cschool.cc");
 
-      // 使用传统for循环进行遍历
-      for (int i = 0, size = list.size(); i < size; i++) {
-         String value = list.get(i);
-         System.out.println(value);
-      }
+	      // 使用iterator遍历
+	      Iterator<String> it = list.iterator();
+	      while (it.hasNext()) {
+		 String value = it.next();
+		 System.out.println(value);
+	      }
 
-      // 使用增强for循环进行遍历
-      for (String value : list) {
-         System.out.println(value);
-      }
-   }
-}
+	      // 使用传统for循环进行遍历
+	      for (int i = 0, size = list.size(); i < size; i++) {
+		 String value = list.get(i);
+		 System.out.println(value);
+	      }
 
-// 栈的实现
-public class MyStack {
-   private int maxSize;
-   private long[] stackArray;
-   private int top;
-   public MyStack(int s) {
-      maxSize = s;
-      stackArray = new long[maxSize];
-      top = -1;
-   }
-   public void push(long j) {
-      stackArray[++top] = j;
-   }
-   public long pop() {
-      return stackArray[top--];
-   }
-   public long peek() {
-      return stackArray[top];
-   }
-   public boolean isEmpty() {
-      return (top == -1);
-   }
-   public boolean isFull() {
-      return (top == maxSize - 1);
-   }
-   public static void main(String[] args) {
-      MyStack theStack = new MyStack(10); 
-      theStack.push(10);
-      theStack.push(20);
-      theStack.push(30);
-      theStack.push(40);
-      theStack.push(50);
-      while (!theStack.isEmpty()) {
-         long value = theStack.pop();
-         System.out.print(value);
-         System.out.print(" ");
-      }
-      System.out.println("");
-   }
-}
+	      // 使用增强for循环进行遍历
+	      for (String value : list) {
+		 System.out.println(value);
+	      }
+	   }
+	}
 
-// 队列的实现
-LinkedList类实现了Queue接口，因此我们可以把LinkedList当成Queue来用。
+	// 栈的实现
+	public class MyStack {
+	   private int maxSize;
+	   private long[] stackArray;
+	   private int top;
+	   public MyStack(int s) {
+	      maxSize = s;
+	      stackArray = new long[maxSize];
+	      top = -1;
+	   }
+	   public void push(long j) {
+	      stackArray[++top] = j;
+	   }
+	   public long pop() {
+	      return stackArray[top--];
+	   }
+	   public long peek() {
+	      return stackArray[top];
+	   }
+	   public boolean isEmpty() {
+	      return (top == -1);
+	   }
+	   public boolean isFull() {
+	      return (top == maxSize - 1);
+	   }
+	   public static void main(String[] args) {
+	      MyStack theStack = new MyStack(10); 
+	      theStack.push(10);
+	      theStack.push(20);
+	      theStack.push(30);
+	      theStack.push(40);
+	      theStack.push(50);
+	      while (!theStack.isEmpty()) {
+		 long value = theStack.pop();
+		 System.out.print(value);
+		 System.out.print(" ");
+	      }
+	      System.out.println("");
+	   }
+	}
 
-    Queue<String> queue = new LinkedList<String>();
-    //添加元素
-    queue.offer("a");
-    //返回第一个元素，并在队列中删除
-    queue.poll()
-    //只返回第一个元素
-    queue.element()
-    queue.peek()
+	// 队列的实现
+	LinkedList类实现了Queue接口，因此我们可以把LinkedList当成Queue来用。
 
-
-// 数组转集合
-List<String> list = Arrays.asList(name); 
+	    Queue<String> queue = new LinkedList<String>();
+	    //添加元素
+	    queue.offer("a");
+	    //返回第一个元素，并在队列中删除
+	    queue.poll()
+	    //只返回第一个元素
+	    queue.element()
+	    queue.peek()
 
 
-// HashMap遍历
-import java.util.*;
-
-public class Main {
-   public static void main(String[] args) {
-      HashMap< String, String> hMap = 
-      new HashMap< String, String>();
-      hMap.put("1", "1st");
-      hMap.put("2", "2nd");
-      hMap.put("3", "3rd");
-      Collection cl = hMap.values();
-      Iterator itr = cl.iterator();
-      while (itr.hasNext()) {
-         System.out.println(itr.next());
-     }
-   }
-}
-
-public static void main(String[] args) {
-
-    Map<String, String> map = new HashMap<String, String>();
-    map.put("1", "value1");
-    map.put("2", "value2");
-    map.put("3", "value3");
-
-    //第一种：普遍使用，二次取值
-    System.out.println("通过Map.keySet遍历key和value：");
-    for (String key : map.keySet()) {
-    System.out.println("key= "+ key + " and value= " + map.get(key));
-    }
-
-    //第二种
-    System.out.println("通过Map.entrySet使用iterator遍历key和value：");
-    Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
-    while (it.hasNext()) {
-        Map.Entry<String, String> entry = it.next();
-        System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
-    }
-
-    //第三种：推荐，尤其是容量大时
-    System.out.println("通过Map.entrySet遍历key和value");
-    for (Map.Entry<String, String> entry : map.entrySet()) {
-        System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
-    }
-
-    //第四种
-    System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
-    for (String v : map.values()) {
-        System.out.println("value= " + v);
-    }
- }
+	// 数组转集合
+	List<String> list = Arrays.asList(name); 
 
 
+	// HashMap遍历
+	import java.util.*;
 
-// 遍历 HashTable 的键值 也可以使用iterator
-import java.util.Hashtable;
-import java.util.Set;
+	public class Main {
+	   public static void main(String[] args) {
+	      HashMap< String, String> hMap = 
+	      new HashMap< String, String>();
+	      hMap.put("1", "1st");
+	      hMap.put("2", "2nd");
+	      hMap.put("3", "3rd");
+	      Collection cl = hMap.values();
+	      Iterator itr = cl.iterator();
+	      while (itr.hasNext()) {
+		 System.out.println(itr.next());
+	     }
+	   }
+	}
 
-public class MyHashtableRead {
-    public static void main(String[] args) {
-        Hashtable<String,String> hm = new Hashtable<String,String> ();
+	public static void main(String[] args) {
 
-        hm.put("first","aaaa");
-        hm.put("second","bbbb");
-        hm.put("third","cccc");
+	    Map<String, String> map = new HashMap<String, String>();
+	    map.put("1", "value1");
+	    map.put("2", "value2");
+	    map.put("3", "value3");
 
-        System.out.println(hm);
+	    //第一种：普遍使用，二次取值
+	    System.out.println("通过Map.keySet遍历key和value：");
+	    for (String key : map.keySet()) {
+	    System.out.println("key= "+ key + " and value= " + map.get(key));
+	    }
 
-        Set<String> keys = hm.keySet();
+	    //第二种
+	    System.out.println("通过Map.entrySet使用iterator遍历key和value：");
+	    Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+	    while (it.hasNext()) {
+		Map.Entry<String, String> entry = it.next();
+		System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+	    }
 
-        for (String key:keys) {
-            System.out.println(key + " : " + hm.get(key));
-        }
-    }
-}
+	    //第三种：推荐，尤其是容量大时
+	    System.out.println("通过Map.entrySet遍历key和value");
+	    for (Map.Entry<String, String> entry : map.entrySet()) {
+		System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+	    }
 
-
-// List 排序
-
-List<String> cities = new ArrayList<>();
-cities.add("上海");
-cities.add("西安");
-Collections.sort(cities, new Comparable<String>(){
-    @Override
-    public int compare(String o1, String o2) {
-        return o1.compareTo(o2);
-    }
-});
-
-
-// Map 排序(按key)
-
-Map<String, String> vendorMap = new TreeMap<String， List<VendorStatisticResultVO>>(new Comparable<String>(){
-
-    @Override
-    public int compare(String o1, String o2) {
-        return o2.compareTo(o1);
-    }
-});
-
-
-// List 过滤 (FluentIterable)
-
-import com.google.common.base.Predicate;
-import com.google.common.collect.FluentIterable;
-
-static class User{
-
-    int age;
-    String name;
-
-    User(int age, String name) {
-        this.age = age;
-        this.name = name;
-    }
-
-    int getAge() {
-        return age;
-    }
-    void setAge() {
-        this.age = age;
-    }
-    int getName() {
-        return name;
-    }
-    void setName() {
-        this.name = name;
-    }
-}
-
-public static void main(String[] args) {
-
-    User u1 = User(20, "test1");
-    User u2 = User(22, "test2");
-    User u3 = User(25, "test3");
-
-    List<User> users = new ArrayList<>();
-    users.add(u1);
-    users.add(u2);
-    users.add(u3);
-
-    FluentIterable<User> filter = FluentIterable.from(users).filter(new Predicate<User>(){
-
-        @Override
-        public boolean apply(User user) {
-            return user.getAge() > 20;
-        }
-    });
-
-    for (User user : filter) {
-        System.out.println(user.getName() + " : " + user.getAge());
-    }
+	    //第四种
+	    System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
+	    for (String v : map.values()) {
+		System.out.println("value= " + v);
+	    }
+	 }
 
 
-    List<String> names = FluentIterable.from(users)
-        .transfrom(new Function<users, String>(){
 
-            @Override
-            public String apply(User user) {
-                return user.getName();
-            }
-        }).toList();
-}
+	// 遍历 HashTable 的键值 也可以使用iterator
+	import java.util.Hashtable;
+	import java.util.Set;
+
+	public class MyHashtableRead {
+	    public static void main(String[] args) {
+		Hashtable<String,String> hm = new Hashtable<String,String> ();
+
+		hm.put("first","aaaa");
+		hm.put("second","bbbb");
+		hm.put("third","cccc");
+
+		System.out.println(hm);
+
+		Set<String> keys = hm.keySet();
+
+		for (String key:keys) {
+		    System.out.println(key + " : " + hm.get(key));
+		}
+	    }
+	}
+
+
+	// List 排序
+
+	List<String> cities = new ArrayList<>();
+	cities.add("上海");
+	cities.add("西安");
+	Collections.sort(cities, new Comparable<String>(){
+	    @Override
+	    public int compare(String o1, String o2) {
+		return o1.compareTo(o2);
+	    }
+	});
+
+
+	// Map 排序(按key)
+
+	Map<String, String> vendorMap = new TreeMap<String， List<VendorStatisticResultVO>>(new Comparable<String>(){
+
+	    @Override
+	    public int compare(String o1, String o2) {
+		return o2.compareTo(o1);
+	    }
+	});
+
+
+	// List 过滤 (FluentIterable)
+
+	import com.google.common.base.Predicate;
+	import com.google.common.collect.FluentIterable;
+
+	static class User{
+
+	    int age;
+	    String name;
+
+	    User(int age, String name) {
+		this.age = age;
+		this.name = name;
+	    }
+
+	    int getAge() {
+		return age;
+	    }
+	    void setAge() {
+		this.age = age;
+	    }
+	    int getName() {
+		return name;
+	    }
+	    void setName() {
+		this.name = name;
+	    }
+	}
+
+	public static void main(String[] args) {
+
+	    User u1 = User(20, "test1");
+	    User u2 = User(22, "test2");
+	    User u3 = User(25, "test3");
+
+	    List<User> users = new ArrayList<>();
+	    users.add(u1);
+	    users.add(u2);
+	    users.add(u3);
+
+	    FluentIterable<User> filter = FluentIterable.from(users).filter(new Predicate<User>(){
+
+		@Override
+		public boolean apply(User user) {
+		    return user.getAge() > 20;
+		}
+	    });
+
+	    for (User user : filter) {
+		System.out.println(user.getName() + " : " + user.getAge());
+	    }
+
+
+	    List<String> names = FluentIterable.from(users)
+		.transfrom(new Function<users, String>(){
+
+		    @Override
+		    public String apply(User user) {
+			return user.getName();
+		    }
+		}).toList();
+	}
 
 
 
@@ -1081,35 +1081,35 @@ Java 泛型（generics）是 JDK 5 中引入的一个新特性, 泛型提供了�
 类型参数能被用来声明返回值类型，并且能作为泛型方法得到的实际参数类型的占位符。
 泛型方法体的声明和其他方法一样。注意类型参数只能代表引用型类型，不能是原始类型（像int,double,char的等）。
 
-public class GenericMethodTest
-{
-   // 泛型方法 printArray                         
-   public static < E > void printArray( E[] inputArray )
-   {
-      // 输出数组元素            
-         for ( E element : inputArray ){        
-            System.out.printf( "%s ", element );
-         }
-         System.out.println();
-    }
+	public class GenericMethodTest
+	{
+	   // 泛型方法 printArray                         
+	   public static < E > void printArray( E[] inputArray )
+	   {
+	      // 输出数组元素            
+		 for ( E element : inputArray ){        
+		    System.out.printf( "%s ", element );
+		 }
+		 System.out.println();
+	    }
 
-    public static void main( String args[] )
-    {
-        // 创建不同类型数组： Integer, Double 和 Character
-        Integer[] intArray = { 1, 2, 3, 4, 5 };
-        Double[] doubleArray = { 1.1, 2.2, 3.3, 4.4 };
-        Character[] charArray = { 'H', 'E', 'L', 'L', 'O' };
+	    public static void main( String args[] )
+	    {
+		// 创建不同类型数组： Integer, Double 和 Character
+		Integer[] intArray = { 1, 2, 3, 4, 5 };
+		Double[] doubleArray = { 1.1, 2.2, 3.3, 4.4 };
+		Character[] charArray = { 'H', 'E', 'L', 'L', 'O' };
 
-        System.out.println( "整型数组元素为:" );
-        printArray( intArray  ); // 传递一个整型数组
+		System.out.println( "整型数组元素为:" );
+		printArray( intArray  ); // 传递一个整型数组
 
-        System.out.println( "\n双精度型数组元素为:" );
-        printArray( doubleArray ); // 传递一个双精度型数组
+		System.out.println( "\n双精度型数组元素为:" );
+		printArray( doubleArray ); // 传递一个双精度型数组
 
-        System.out.println( "\n字符型数组元素为:" );
-        printArray( charArray ); // 传递一个字符型数组
-    } 
-}
+		System.out.println( "\n字符型数组元素为:" );
+		printArray( charArray ); // 传递一个字符型数组
+	    } 
+	}
 
 有界的类型参数:
 可能有时候，你会想限制那些被允许传递到一个类型参数的类型种类范围
@@ -1118,33 +1118,33 @@ public class GenericMethodTest
 public static <T extends Comparable<T>> T maximum(T x, T y, T z)
 
 【泛型类】
-public class Box<T> {
-   
-  private T t;
+	public class Box<T> {
 
-  public void add(T t) {
-    this.t = t;
-  }
+	  private T t;
 
-  public T get() {
-    return t;
-  }
+	  public void add(T t) {
+	    this.t = t;
+	  }
 
-  public static void main(String[] args) {
-    Box<Integer> integerBox = new Box<Integer>();
-    Box<String> stringBox = new Box<String>();
+	  public T get() {
+	    return t;
+	  }
 
-    integerBox.add(new Integer(10));
-    stringBox.add(new String("菜鸟教程"));
+	  public static void main(String[] args) {
+	    Box<Integer> integerBox = new Box<Integer>();
+	    Box<String> stringBox = new Box<String>();
 
-    System.out.printf("整型值为 :%d\n\n", integerBox.get());
-    System.out.printf("字符串为 :%s\n", stringBox.get());
-  }
-}
+	    integerBox.add(new Integer(10));
+	    stringBox.add(new String("菜鸟教程"));
 
-public void out(E msg) {
-    System.out.println(E);
-}
+	    System.out.printf("整型值为 :%d\n\n", integerBox.get());
+	    System.out.printf("字符串为 :%s\n", stringBox.get());
+	  }
+	}
+
+	public void out(E msg) {
+	    System.out.println(E);
+	}
 
 
 
@@ -1184,30 +1184,30 @@ Static关键字用来声明独立于对象的静态方法。静态方法不能�
 
 
 
-public class InstanceCounter {
-   private static int numInstances = 0;
-   protected static int getCount() {
-      return numInstances;
-   }
+	public class InstanceCounter {
+	   private static int numInstances = 0;
+	   protected static int getCount() {
+	      return numInstances;
+	   }
 
-   private static void addInstance() {
-      numInstances++;
-   }
+	   private static void addInstance() {
+	      numInstances++;
+	   }
 
-   InstanceCounter() {
-      InstanceCounter.addInstance();
-   }
+	   InstanceCounter() {
+	      InstanceCounter.addInstance();
+	   }
 
-   public static void main(String[] arguments) {
-      System.out.println("Starting with " +
-      InstanceCounter.getCount() + " instances");
-      for (int i = 0; i < 500; ++i){
-         new InstanceCounter();
-          }
-      System.out.println("Created " +
-      InstanceCounter.getCount() + " instances");
-   }
-}
+	   public static void main(String[] arguments) {
+	      System.out.println("Starting with " +
+	      InstanceCounter.getCount() + " instances");
+	      for (int i = 0; i < 500; ++i){
+		 new InstanceCounter();
+		  }
+	      System.out.println("Created " +
+	      InstanceCounter.getCount() + " instances");
+	   }
+	}
 
 /////////////////////////
 // 方法的重载
@@ -1262,52 +1262,52 @@ overwrite 重写继承到的那个方法的代码，原方法被放弃。
 实例
 下面是一个使用构造方法的例子：
 */
-// 一个简单的构造函数
-class MyClass {
-   int x;
-   
-   // 以下是构造函数
-   MyClass() {
-      x = 10;
-   }
-}
+	// 一个简单的构造函数
+	class MyClass {
+	   int x;
+
+	   // 以下是构造函数
+	   MyClass() {
+	      x = 10;
+	   }
+	}
 
 
-// finalize() 方法
-/*
-Java允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，这个方法叫做finalize( )，它用来清除回收对象。
-例如，你可以使用finalize()来确保一个对象打开的文件被关闭了。
-在finalize()方法里，你必须指定在对象销毁时候要执行的操作。
-finalize()一般格式是：
-*/
-protected void finalize()
-{
-   // 在这里终结代码
-}
+	// finalize() 方法
+	/*
+	Java允许定义这样的方法，它在对象被垃圾收集器析构(回收)之前调用，这个方法叫做finalize( )，它用来清除回收对象。
+	例如，你可以使用finalize()来确保一个对象打开的文件被关闭了。
+	在finalize()方法里，你必须指定在对象销毁时候要执行的操作。
+	finalize()一般格式是：
+	*/
+	protected void finalize()
+	{
+	   // 在这里终结代码
+	}
 
-public class FinalizationDemo {  
-    public static void main(String[] args) {  
-        Cake c1 = new Cake(1);  
-        Cake c2 = new Cake(2);  
-        Cake c3 = new Cake(3);  
-          
-        c2 = c3 = null;  
-        System.gc(); //调用Java垃圾收集器  
-    }  
-}  
-  
-class Cake extends Object {  
-    private int id;  
-    public Cake(int id) {  
-        this.id = id;  
-        System.out.println("Cake Object " + id + "is created");  
-    }  
-      
-    protected void finalize() throws java.lang.Throwable {  
-        super.finalize();  
-        System.out.println("Cake Object " + id + "is disposed");  
-    }  
-}  
+	public class FinalizationDemo {  
+	    public static void main(String[] args) {  
+		Cake c1 = new Cake(1);  
+		Cake c2 = new Cake(2);  
+		Cake c3 = new Cake(3);  
+
+		c2 = c3 = null;  
+		System.gc(); //调用Java垃圾收集器  
+	    }  
+	}  
+
+	class Cake extends Object {  
+	    private int id;  
+	    public Cake(int id) {  
+		this.id = id;  
+		System.out.println("Cake Object " + id + "is created");  
+	    }  
+
+	    protected void finalize() throws java.lang.Throwable {  
+		super.finalize();  
+		System.out.println("Cake Object " + id + "is disposed");  
+	    }  
+	}  
 
 
 //---------------------------------------------
@@ -1336,163 +1336,163 @@ class Cake extends Object {
 // 你也可以把其他的非public类放入到.java文件中
 
 
-// 类定义的语法:
-// <public/private/protected> class <类名>{
-//    //成员变量, 构造函数, 函数
-//    //Java中函数被称作方法
-// }
+	// 类定义的语法:
+	// <public/private/protected> class <类名>{
+	//    //成员变量, 构造函数, 函数
+	//    //Java中函数被称作方法
+	// }
 
-class Bicycle {
+	class Bicycle {
 
-    // Bicycle 类的成员变量和方法
-    public int cadence; // Public: 任意位置均可访问
-    private int speed;  // Private: 只在同类中可以访问
-    protected int gear; // Protected: 可以在同类与子类中可以访问
-    String name; // default: 可以在包内中可以访问
+	    // Bicycle 类的成员变量和方法
+	    public int cadence; // Public: 任意位置均可访问
+	    private int speed;  // Private: 只在同类中可以访问
+	    protected int gear; // Protected: 可以在同类与子类中可以访问
+	    String name; // default: 可以在包内中可以访问
 
-    // 构造函数是初始化一个对象的方式
-    // 以下是一个默认构造函数
-    public Bicycle() {
-        gear = 1;
-        cadence = 50;
-        speed = 5;
-        name = "Bontrager";
-    }
+	    // 构造函数是初始化一个对象的方式
+	    // 以下是一个默认构造函数
+	    public Bicycle() {
+		gear = 1;
+		cadence = 50;
+		speed = 5;
+		name = "Bontrager";
+	    }
 
-    // 一下是一个含有参数的构造函数
-    public Bicycle(int startCadence, int startSpeed, int startGear, String name) {
-        this.gear = startGear;
-        this.cadence = startCadence;
-        this.speed = startSpeed;
-        this.name = name;
-    }
+	    // 一下是一个含有参数的构造函数
+	    public Bicycle(int startCadence, int startSpeed, int startGear, String name) {
+		this.gear = startGear;
+		this.cadence = startCadence;
+		this.speed = startSpeed;
+		this.name = name;
+	    }
 
-    // 函数语法:
-    // <public/private/protected> <返回值类型> <函数名称>(<参数列表>)
+	    // 函数语法:
+	    // <public/private/protected> <返回值类型> <函数名称>(<参数列表>)
 
-    // Java类中经常会用getter和setter来对成员变量进行操作
+	    // Java类中经常会用getter和setter来对成员变量进行操作
 
-    // 方法声明的语法:
-    // <作用域> <返回值类型> <方法名>(<参数列表>)
-    public int getCadence() {
-        return cadence;
-    }
+	    // 方法声明的语法:
+	    // <作用域> <返回值类型> <方法名>(<参数列表>)
+	    public int getCadence() {
+		return cadence;
+	    }
 
-    // void返回值函数没有返回值
-    public void setCadence(int newValue) {
-        cadence = newValue;
-    }
+	    // void返回值函数没有返回值
+	    public void setCadence(int newValue) {
+		cadence = newValue;
+	    }
 
-    public void setGear(int newValue) {
-        gear = newValue;
-    }
+	    public void setGear(int newValue) {
+		gear = newValue;
+	    }
 
-    public void speedUp(int increment) {
-        speed += increment;
-    }
+	    public void speedUp(int increment) {
+		speed += increment;
+	    }
 
-    public void slowDown(int decrement) {
-        speed -= decrement;
-    }
+	    public void slowDown(int decrement) {
+		speed -= decrement;
+	    }
 
-    public void setName(String newName) {
-        name = newName;
-    }
+	    public void setName(String newName) {
+		name = newName;
+	    }
 
-    public String getName() {
-        return name;
-    }
+	    public String getName() {
+		return name;
+	    }
 
-    //返回对象属性的方法
-    @Override
-    public String toString() {
-        return "gear: " + gear +
-                " cadence: " + cadence +
-                " speed: " + speed +
-                " name: " + name;
-    }
-} // Bicycle 类结束
+	    //返回对象属性的方法
+	    @Override
+	    public String toString() {
+		return "gear: " + gear +
+			" cadence: " + cadence +
+			" speed: " + speed +
+			" name: " + name;
+	    }
+	} // Bicycle 类结束
 
-// PennyFarthing 是 Bicycle 的子类
-class PennyFarthing extends Bicycle {
-    // (Penny Farthings 是前轮很大的 Bicycle， 并且没有齿轮)
+	// PennyFarthing 是 Bicycle 的子类
+	class PennyFarthing extends Bicycle {
+	    // (Penny Farthings 是前轮很大的 Bicycle， 并且没有齿轮)
 
-    public PennyFarthing(int startCadence, int startSpeed){
-        // 通过super调用父类的构造函数
-        super(startCadence, startSpeed, 0, "PennyFarthing");
-    }
+	    public PennyFarthing(int startCadence, int startSpeed){
+		// 通过super调用父类的构造函数
+		super(startCadence, startSpeed, 0, "PennyFarthing");
+	    }
 
-    // 你可以用@注释来表示需要重载的方法
-    // 了解更多的注释使用方法，可以访问下面的地址：
-    // http://docs.oracle.com/javase/tutorial/java/annotations/
-    @Override
-    public void setGear(int gear) {
-        gear = 0;
-    }
+	    // 你可以用@注释来表示需要重载的方法
+	    // 了解更多的注释使用方法，可以访问下面的地址：
+	    // http://docs.oracle.com/javase/tutorial/java/annotations/
+	    @Override
+	    public void setGear(int gear) {
+		gear = 0;
+	    }
 
-}
+	}
 
 //---------------------------------------------
 
-序列化对象
-import java.io.*;
+	序列化对象
+	import java.io.*;
 
-public class SerializeDemo
-{
-   public static void main(String [] args)
-   {
-      Employee e = new Employee();
-      e.name = "Reyan Ali";
-      e.address = "Phokka Kuan, Ambehta Peer";
-      e.SSN = 11122333;
-      e.number = 101;
-      try
-      {
-         FileOutputStream fileOut =
-         new FileOutputStream("/tmp/employee.ser");
-         ObjectOutputStream out = new ObjectOutputStream(fileOut);
-         out.writeObject(e);
-         out.close();
-         fileOut.close();
-         System.out.printf("Serialized data is saved in /tmp/employee.ser");
-      }catch(IOException i)
-      {
-          i.printStackTrace();
-      }
-   }
-}
+	public class SerializeDemo
+	{
+	   public static void main(String [] args)
+	   {
+	      Employee e = new Employee();
+	      e.name = "Reyan Ali";
+	      e.address = "Phokka Kuan, Ambehta Peer";
+	      e.SSN = 11122333;
+	      e.number = 101;
+	      try
+	      {
+		 FileOutputStream fileOut =
+		 new FileOutputStream("/tmp/employee.ser");
+		 ObjectOutputStream out = new ObjectOutputStream(fileOut);
+		 out.writeObject(e);
+		 out.close();
+		 fileOut.close();
+		 System.out.printf("Serialized data is saved in /tmp/employee.ser");
+	      }catch(IOException i)
+	      {
+		  i.printStackTrace();
+	      }
+	   }
+	}
 
-反序列化对象
-import java.io.*;
-public class DeserializeDemo
-{
-   public static void main(String [] args)
-   {
-      Employee e = null;
-      try
-      {
-         FileInputStream fileIn = new FileInputStream("/tmp/employee.ser");
-         ObjectInputStream in = new ObjectInputStream(fileIn);
-         e = (Employee) in.readObject();
-         in.close();
-         fileIn.close();
-      }catch(IOException i)
-      {
-         i.printStackTrace();
-         return;
-      }catch(ClassNotFoundException c)
-      {
-         System.out.println("Employee class not found");
-         c.printStackTrace();
-         return;
-      }
-      System.out.println("Deserialized Employee...");
-      System.out.println("Name: " + e.name);
-      System.out.println("Address: " + e.address);
-      System.out.println("SSN: " + e.SSN);
-      System.out.println("Number: " + e.number);
-    }
-}
+	反序列化对象
+	import java.io.*;
+	public class DeserializeDemo
+	{
+	   public static void main(String [] args)
+	   {
+	      Employee e = null;
+	      try
+	      {
+		 FileInputStream fileIn = new FileInputStream("/tmp/employee.ser");
+		 ObjectInputStream in = new ObjectInputStream(fileIn);
+		 e = (Employee) in.readObject();
+		 in.close();
+		 fileIn.close();
+	      }catch(IOException i)
+	      {
+		 i.printStackTrace();
+		 return;
+	      }catch(ClassNotFoundException c)
+	      {
+		 System.out.println("Employee class not found");
+		 c.printStackTrace();
+		 return;
+	      }
+	      System.out.println("Deserialized Employee...");
+	      System.out.println("Name: " + e.name);
+	      System.out.println("Address: " + e.address);
+	      System.out.println("SSN: " + e.SSN);
+	      System.out.println("Number: " + e.number);
+	    }
+	}
 
 
 //---------------------------------------------
@@ -1539,19 +1539,19 @@ try
 }
 
 
-// 多重try/catch。
-try {
-   file = new FileInputStream(fileName);
-   x = (byte) file.read();
-} catch(IOException i) {
-   i.printStackTrace();
-   // log sth.
-   return -1;
-} catch(FileNotFoundException f) //Not valid!
-{
-   f.printStackTrace();
-   return -1;
-}
+	// 多重try/catch。
+	try {
+	   file = new FileInputStream(fileName);
+	   x = (byte) file.read();
+	} catch(IOException i) {
+	   i.printStackTrace();
+	   // log sth.
+	   return -1;
+	} catch(FileNotFoundException f) //Not valid!
+	{
+	   f.printStackTrace();
+	   return -1;
+	}
 
 
 // throws/throw关键字：
@@ -1561,45 +1561,45 @@ try {
 // 重写方法时需要抛出与原方法同样的异常或者不抛异常
 
 //下面的方法声明抛出RemoteException和InsufficientFundsException：
-import java.io.*;
-public class className
-{
-   public void withdraw(double amount) throws RemoteException, //声明方法抛出异常
-                              InsufficientFundsException
-   {
-       // Method implementation
-   }
-   //Remainder of class definition
-}
+	import java.io.*;
+	public class className
+	{
+	   public void withdraw(double amount) throws RemoteException, //声明方法抛出异常
+				      InsufficientFundsException
+	   {
+	       // Method implementation
+	   }
+	   //Remainder of class definition
+	}
 
-// finally代码块出现在catch代码块最后，语法如下：
- try{
-    // 程序代码
- }catch(异常类型1 异常的变量名1){
-    // 程序代码
- }catch(异常类型2 异常的变量名2){
-    // 程序代码
- }finally{
-    // 程序代码
- }
+	// finally代码块出现在catch代码块最后，语法如下：
+	 try{
+	    // 程序代码
+	 }catch(异常类型1 异常的变量名1){
+	    // 程序代码
+	 }catch(异常类型2 异常的变量名2){
+	    // 程序代码
+	 }finally{
+	    // 程序代码
+	 }
 
 
-public class ExcepTest{
+	public class ExcepTest{
 
-   public static void main(String args[]){
-      int a[] = new int[2];
-      try{
-         System.out.println("Access element three :" + a[3]);
-      }catch(ArrayIndexOutOfBoundsException e){
-         System.out.println("Exception thrown  :" + e);
-      }
-      finally{
-         a[0] = 6;
-         System.out.println("First element value: " +a[0]);
-         System.out.println("The finally statement is executed");
-      }
-   }
-}
+	   public static void main(String args[]){
+	      int a[] = new int[2];
+	      try{
+		 System.out.println("Access element three :" + a[3]);
+	      }catch(ArrayIndexOutOfBoundsException e){
+		 System.out.println("Exception thrown  :" + e);
+	      }
+	      finally{
+		 a[0] = 6;
+		 System.out.println("First element value: " +a[0]);
+		 System.out.println("The finally statement is executed");
+	      }
+	   }
+	}
 
 
 /*
@@ -1613,21 +1613,21 @@ public class ExcepTest{
 class MyException extends Exception{
 }
 
-// 文件名InsufficientFundsException.java
-import java.io.*;
+	// 文件名InsufficientFundsException.java
+	import java.io.*;
 
-public class InsufficientFundsException extends Exception
-{
-   private double amount;
-   public InsufficientFundsException(double amount)
-   {
-      this.amount = amount;
-   } 
-   public double getAmount()
-   {
-      return amount;
-   }
-}
+	public class InsufficientFundsException extends Exception
+	{
+	   private double amount;
+	   public InsufficientFundsException(double amount)
+	   {
+	      this.amount = amount;
+	   } 
+	   public double getAmount()
+	   {
+	      return amount;
+	   }
+	}
 
 
 Runtime Exception： 
