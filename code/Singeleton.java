@@ -1,4 +1,4 @@
-//JAVA单例
+//练习1：JAVA单例
 
 package com.young.singleton;
 
